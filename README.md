@@ -54,5 +54,3 @@ Four free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. C
 ## 📬 Contact
 
 Open an issue on one of my repositories. Bug reports with the Blender version and the steps to reproduce are the most useful thing you can send.
-
-<p align="center"><sub>Header art: the "Walter" drawing.</sub></p>
