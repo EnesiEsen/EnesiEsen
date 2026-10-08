@@ -29,7 +29,7 @@ CARDS = [
     ("terrain-blend", "TERRAIN BLEND", "Blend any number of PBR textures with vertex groups.", "Blender 5.0-5.2  v1.1.0", "#6fae5c", "terrain"),
     ("retopo-kit", "RETOPO KIT", "One-click quad retopology for props, vehicles and characters.", "Blender 5.0-5.2  v1.0.0", "#e0cf45", "retopo"),
     ("fivem-toolkit", "FIVEM TOOLKIT", "Check, fix and export props, interiors and peds for FiveM.", "Blender 5.0-5.2  v0.1.1", "#d9534a", "fivem"),
-    ("ue5-bridge", "UE5 BRIDGE", "Clean FBX export for Unreal Engine 5, with root motion.", "Blender 5.0-5.2  v0.1.0", "#d8cfbd", "ue5"),
+    ("ue5-bridge", "UE5 BRIDGE", "Clean FBX export for Unreal Engine 5, with root motion.", "Blender 5.0-5.2  v0.2.0", "#d8cfbd", "ue5"),
 ]
 
 if __name__ == "__main__":

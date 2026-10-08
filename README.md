@@ -20,7 +20,7 @@ araçlar yazıyorum.*
 
 ## 🧰 Blender Toolkit
 
-Four free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. Click a card to open its guide.
+Ten free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. Four are shown here; click a card to open its guide.
 
 <table align="center">
   <tr>
@@ -33,7 +33,9 @@ Four free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. C
   </tr>
 </table>
 
-<p align="center"><a href="https://github.com/EnesiEsen/blender-toolkit"><b>All four in one repository: EnesiEsen/blender-toolkit →</b></a></p>
+<p align="center">Also in the toolkit: <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/scatter_brush.md"><b>Scatter Brush</b></a> (grass, rocks and trees by weight painting or a click brush) and the UE5 pipeline set: <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texture-kit">Texture Kit</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texel-density">Texel Density</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#collision-maker">Collision Maker</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#hard-surface-kit">Hard Surface Kit</a> and <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#game-rig-kit">Game Rig Kit</a>.</p>
+
+<p align="center"><a href="https://github.com/EnesiEsen/blender-toolkit"><b>All ten in one repository: EnesiEsen/blender-toolkit →</b></a></p>
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""></div>
 
@@ -45,7 +47,7 @@ Four free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. C
 
 ## 🎯 Right now
 
-- Polishing the four add-ons in **blender-toolkit** and writing their guides in English and Turkish.
+- Building and documenting the **blender-toolkit** add-ons in English and Turkish: a UE5 asset pipeline (textures, texel density, collision, hard surface, rigging) and the **Scatter Brush** for level design.
 - **FiveM:** the prop, MLO interior and ped clothing pipeline on top of Sollumz.
 - **Next:** trying the UE5 Bridge inside Unreal Engine 5, once the engine is installed.
 
