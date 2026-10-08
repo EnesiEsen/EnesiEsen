@@ -70,6 +70,8 @@ h2{position:absolute;left:44px;top:26px;font-family:'Bebas Neue',Impact,sans-ser
 
 ICONS = {
     "terrain": '<path d="M4 50 L22 22 L32 36 L42 18 L60 50 Z"/><path d="M4 58 H60"/>',
+    "scatter": '<path d="M8 58 Q10 42 4 32 M20 58 Q20 36 26 22 M32 58 Q36 40 46 32 M44 58 Q48 48 58 44"/>'
+               '<circle cx="14" cy="14" r="4"/><circle cx="40" cy="12" r="3"/><circle cx="54" cy="22" r="4"/>',
     "retopo": '<path d="M8 8 H56 V56 H8 Z M8 32 H56 M32 8 V56 M20 8 V32 M44 32 V56"/>',
     "fivem": '<path d="M32 6 L56 18 V46 L32 58 L8 46 V18 Z M8 18 L32 30 L56 18 M32 30 V58"/>',
     "ue5": '<circle cx="32" cy="12" r="7"/><path d="M32 19 V40 M32 26 L16 34 M32 26 L48 34 M32 40 L20 58 M32 40 L44 58"/>',

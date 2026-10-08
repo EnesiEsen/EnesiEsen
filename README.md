@@ -20,20 +20,23 @@ araçlar yazıyorum.*
 
 ## 🧰 Blender Toolkit
 
-Ten free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. Four are shown here; click a card to open its guide.
+Ten free Blender add-ons (GPL-3.0), each with an English and a Turkish guide. Five are shown here; click a card to open its guide.
 
 <table align="center">
   <tr>
     <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/terrain_blend.md"><img src="assets/card-terrain-blend.png" alt="Terrain Blend" width="440"></a></td>
-    <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/retopo_kit.md"><img src="assets/card-retopo-kit.png" alt="Retopo Kit" width="440"></a></td>
+    <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/scatter_brush.md"><img src="assets/card-scatter-brush.png" alt="Scatter Brush" width="440"></a></td>
   </tr>
   <tr>
+    <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/retopo_kit.md"><img src="assets/card-retopo-kit.png" alt="Retopo Kit" width="440"></a></td>
     <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/fivem_toolkit.md"><img src="assets/card-fivem-toolkit.png" alt="FiveM Toolkit" width="440"></a></td>
-    <td><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5_bridge.md"><img src="assets/card-ue5-bridge.png" alt="UE5 Bridge" width="440"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5_bridge.md"><img src="assets/card-ue5-bridge.png" alt="UE5 Bridge" width="440"></a></td>
   </tr>
 </table>
 
-<p align="center"><b>General-purpose tools</b> (any 3D project): Terrain Blend and Retopo Kit above, plus <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/scatter_brush.md">Scatter Brush</a> (grass, rocks and trees by weight painting or a click brush) and <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/hardsurface_kit.md">Hard Surface Kit</a>.<br><b>Unreal Engine 5 tools:</b> UE5 Bridge above, plus <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texture-kit">Texture Kit</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texel-density">Texel Density</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#collision-maker">Collision Maker</a> and <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#game-rig-kit">Game Rig Kit</a>.</p>
+<p align="center"><b>General-purpose tools</b> (any 3D project): Terrain Blend, Scatter Brush and Retopo Kit above, plus <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/hardsurface_kit.md">Hard Surface Kit</a>.<br><b>Unreal Engine 5 tools:</b> UE5 Bridge above, plus <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texture-kit">Texture Kit</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#texel-density">Texel Density</a>, <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#collision-maker">Collision Maker</a> and <a href="https://github.com/EnesiEsen/blender-toolkit/blob/main/docs/ue5-pipeline.md#game-rig-kit">Game Rig Kit</a>.<br><b>FiveM:</b> FiveM Toolkit above.</p>
 
 <p align="center"><a href="https://github.com/EnesiEsen/blender-toolkit"><b>All ten in one repository: EnesiEsen/blender-toolkit →</b></a></p>
 

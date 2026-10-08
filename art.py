@@ -357,4 +357,78 @@ def scene_ue5():
     return wrap(31, "".join(b))
 
 
-SCENES = {"terrain-blend": scene_terrain, "retopo-kit": scene_retopo, "fivem-toolkit": scene_fivem, "ue5-bridge": scene_ue5}
+# ----------------------------------------------------------------------------------------------- Scatter Brush
+def tuft(x, y, h, rnd):
+    out = []
+    for dx, dy in ((-0.45, -0.72), (0.0, -1.0), (0.45, -0.7)):
+        end = (dx * h * 0.55 + rnd.uniform(-1.5, 1.5), dy * h)
+        for color, width in ((INK, 3), ("#8fb55a", 1.4)):
+            out.append(f'<path d="M{x:.1f} {y:.1f} q{end[0] / 2:.1f} {end[1] / 2:.1f} {end[0]:.1f} {end[1]:.1f}" stroke="{color}" '
+                       f'stroke-width="{width}" fill="none" stroke-linecap="round"/>')
+    return "".join(out)
+
+
+def pine(x, y, s):
+    out = [f'<path d="M{x - 4 * s:.1f} {y:.1f} L{x - 4 * s:.1f} {y - 16 * s:.1f} L{x + 4 * s:.1f} {y - 16 * s:.1f} L{x + 4 * s:.1f} {y:.1f} Z" '
+           f'fill="#5a4333" stroke="{INK}" stroke-width="3"/>']
+    for k, (w, h) in enumerate(((30, 36), (24, 32), (17, 28))):
+        y0 = y - 12 * s - k * 22 * s
+        out.append(shape(poly([(x - w * s, y0), (x, y0 - h * s), (x + w * s, y0)]), "#2f4a2e", 3.2, "hatch", 0.5, "rough2"))
+    return "".join(out)
+
+
+def rock(cx, cy, s):
+    pts = [(cx - 30 * s, cy + 18 * s), (cx - 22 * s, cy - 10 * s), (cx - 2 * s, cy - 24 * s), (cx + 24 * s, cy - 12 * s),
+           (cx + 32 * s, cy + 18 * s)]
+    return shape(poly(pts), "#8a847b", 4, "hatch", 0.6) + line(cx - 2 * s, cy - 24 * s, cx + 2 * s, cy + 6 * s, INK, 2.5)
+
+
+def scene_scatter():
+    rnd = random.Random(41)
+    b = ['<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171011"/>'
+         '<stop offset=".5" stop-color="#3b2c2a"/><stop offset=".72" stop-color="#8f7a52"/></linearGradient></defs>']
+    b.append(f'<rect width="{W}" height="{H}" fill="url(#sky)"/>')
+    far = [(0, 232), (120, 196), (240, 220), (380, 172), (520, 212), (660, 160), (800, 206), (940, 178), (1080, 212),
+           (1200, 188), (1200, 300), (0, 300)]
+    b.append('<circle cx="870" cy="150" r="96" fill="#e8c27a" opacity=".22" filter="url(#glow)"/>')
+    b.append(f'<circle cx="870" cy="150" r="38" fill="#ecd29a" stroke="{INK}" stroke-width="4" filter="url(#rough)"/>')
+    b.append(shape(poly(far), "#4b3a39", 4, "hatch2", 0.7))
+    ridge = [(0, 284), (250, 258), (540, 252), (820, 262), (1060, 250), (1200, 258)]
+    hill = smooth(ridge) + " L1200 420 L0 420 Z"
+    b.append(f'<clipPath id="hill"><path d="{hill}"/></clipPath>')
+    b.append(shape(hill, "#5d4a35", 4, "hatch", 0.35))
+    b.append('<g clip-path="url(#hill)">')
+    # weight paint: the same blue-green-yellow-red heat map Blender shows
+    for rx, ry, color in ((340, 66, "#2a3fb8"), (262, 52, "#2a9fc0"), (190, 40, "#4cbf5a"), (118, 25, "#d8d040"), (54, 11, "#d96a2a")):
+        b.append(f'<ellipse cx="905" cy="316" rx="{rx}" ry="{ry}" fill="{color}" opacity=".82" filter="url(#soft)"/>')
+    for i in range(-14, 15):
+        b.append(line(600 + i * 40, 256, 600 + i * 150, 424, "#e2d9c6", 1.4, 'opacity=".14"'))
+    for k in range(1, 9):
+        y = 256 + (k ** 1.55) * 4.4
+        b.append(line(0, y, W, y, "#e2d9c6", 1.4, 'opacity=".14"'))
+    b.append("</g>")
+    b.append(shape(smooth(ridge), "none", 4.5, None))
+    for x, y, s in ((655, 288, 1.0), (708, 302, 0.82), (1160, 282, 0.9)):
+        b.append(pine(x, y, s))
+    for cx, cy, s in ((1112, 322, 0.9), (1160, 350, 1.15), (735, 344, 0.75)):
+        b.append(rock(cx, cy, s))
+    tufts = []
+    while len(tufts) < 300:  # denser where the weight is high
+        x, y = rnd.gauss(905, 150), 318 + rnd.gauss(0, 26)
+        if 266 < y < 414 and 560 < x < 1190:
+            tufts.append((x, y))
+    for x, y in sorted(tufts, key=lambda p: p[1]):
+        closeness = max(0.0, 1 - ((x - 905) / 330) ** 2 - ((y - 316) / 66) ** 2)
+        b.append(tuft(x, y, 11 + 14 * closeness, rnd))
+    # the brush: a ring on the ground, a cursor, and a few fresh stamps inside it
+    b.append(f'<ellipse cx="1015" cy="306" rx="100" ry="27" fill="none" stroke="{INK}" stroke-width="9" filter="url(#rough2)"/>')
+    b.append('<ellipse cx="1015" cy="306" rx="100" ry="27" fill="none" stroke="#8be05a" stroke-width="4.5" filter="url(#rough2)"/>')
+    for dx, dy, s in ((-44, 6, 0.42), (6, 12, 0.5), (46, -2, 0.38)):
+        b.append(rock(1015 + dx, 304 + dy, s))
+    b.append(shape(poly([(1040, 268), (1040, 302), (1049, 294), (1056, 308), (1063, 305), (1056, 292), (1068, 292)]), "#efe8d6", 3,
+                   None, 0, "rough2"))
+    return wrap(41, "".join(b))
+
+
+SCENES = {"terrain-blend": scene_terrain, "retopo-kit": scene_retopo, "fivem-toolkit": scene_fivem, "ue5-bridge": scene_ue5,
+          "scatter-brush": scene_scatter}
